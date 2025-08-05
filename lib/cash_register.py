@@ -28,3 +28,18 @@ def add_item(self, item, price, quantity):
     self.items.append(new_item)
     self.total += self.price  
     self.previous_transactions.append(new_item)
+
+def apply_discount(self):
+    self.total -= self.total * (self.discount / 100)
+    return self.total
+    
+def void_last_transaction(self):
+    if not self.previous_transactions:
+        print("There is no transaction to void.")
+        return
+    last = self.previous_transactions.pop()
+    self.total -= last['price']
+    for _ in range(last['quantity']):
+        self.items.remove(last['item'])
+    return self.total
+
