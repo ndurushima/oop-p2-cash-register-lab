@@ -18,3 +18,13 @@ def dicount(self, value):
     else:
         print("Not valid discount")
 
+def add_item(self, item, price, quantity):
+    new_item = {
+       'item': item,
+       'price': price,
+       'quantity': quantity
+    }
+    self.price = price * quantity
+    self.items.append(new_item)
+    self.total += self.price  
+    self.previous_transactions.append(new_item)
