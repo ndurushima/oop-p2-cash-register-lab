@@ -1,11 +1,11 @@
 class CashRegister:
-  def __init__(self, discount):
+  def __init__(self, discount=0):
     self.discount = discount
     self.total = 0
     self.items = []
     self.previous_transactions = []
 
-  def add_item(self, item, price, quantity):
+  def add_item(self, item, price, quantity=1):
     new_item = {
       'item': item,
       'price': price,
