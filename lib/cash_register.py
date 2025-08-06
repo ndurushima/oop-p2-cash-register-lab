@@ -24,6 +24,10 @@ class CashRegister:
         return
     discount_amount = self.total * (self.discount / 100)
     self.total -= discount_amount
+
+    if self.total.is_integer():
+        self.total = int(self.total)
+
     print(f"After the discount, the total comes to ${self.total}.")
     return self.total
       
@@ -35,6 +39,6 @@ class CashRegister:
     self.total -= last['price']
     for _ in range(last['quantity']):
         self.items.remove(last['item'])
-    self.total -= last['price']
+
     return self.total
 
