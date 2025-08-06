@@ -24,6 +24,7 @@ class CashRegister:
         return
     discount_amount = self.total * (self.discount / 100)
     self.total -= discount_amount
+    print(f"After the discount, the total comes to ${self.total}.")
     return self.total
       
   def void_last_transaction(self):
