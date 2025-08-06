@@ -28,5 +28,6 @@ class CashRegister:
     self.total -= last['price']
     for _ in range(last['quantity']):
         self.items.remove(last['item'])
+    self.total -= last['price']
     return self.total
 
