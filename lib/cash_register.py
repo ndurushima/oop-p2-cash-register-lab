@@ -8,13 +8,15 @@ class CashRegister:
   def add_item(self, item, price, quantity=1):
     new_item = {
       'item': item,
-      'price': price,
+      'price': price * quantity,
       'quantity': quantity
     }
-    self.price = price * quantity
-    self.items.append(new_item)
-    self.total += self.price  
     self.previous_transactions.append(new_item)
+
+    for _ in range(quantity):
+      self.items.append(item)
+
+    self.total += new_item['price'] 
 
   def apply_discount(self):
     self.total -= self.total * (self.discount / 100)
